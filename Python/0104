@@ -15,3 +15,202 @@ python 리스트, 튜플, 딕셔너리 차이점
 `순서 없음 -> key로 접근 가능, index 없음
 `key 값 중복 안됨, key 값 중복 시 뒤에 입력한 값으로 변경됨
 
+
+r = tuple('1''2')
+x = (1,2,3) 
+y=('a','b','c','d')
+z=(1,"hello","there")
+
+print(r)
+print(x+y)
+print('a' in y)
+print(z.index(1))
+
+
+if 2 > 1:
+    print("조건문")
+
+if not 1 > 2:
+    print("조건문 if not")
+
+a = 0
+if a > 1 : print("a는 1보다 크다")
+elif a < 1 : print("a는 1보다 작다")
+else : print("a는 1보다 크지도 작지도 않다.")
+
+if 1 > 0 and 2 > 1 :
+    print("조건문 and")
+
+if 1 > 0 or 0 > 1 :
+    print("조건문  or")
+
+print('abc, 순서대로 치환, hi hello {} say how are you {} python study'.format('hb',12))
+
+print('이름은 {name}이다. {name}의 나이는  {age}이다. {age} 친구들 '.format(name='hb',age=25))
+
+for i in range(3):
+    print("hi")
+
+
+name = ['seoul','sachen','gimhae','busan','inchen']
+for i in name:
+    print(i)
+
+
+i = 0
+while i < 5:
+    print('hi')
+    i = i+1 #없으면 무한 반복
+
+i = 0
+while True:
+    print("roof")
+    i = i+1
+
+    if i>2:
+        break
+
+#?????????????????????????????????
+for i in range(2,10):
+    for s in range(1,10):
+        print("%2d x%2d = %5d" %(i, s, i*s))
+
+
+#?????????????????????????????????
+i = 2
+while i < 10:
+    j = 1
+    while j < 10:
+        print("%2d x%2d = %5d" %(i, j, i*j))
+        j = j+1
+i = i+1
+
+
+for i in range(3):
+    print(i)
+    print('continue')
+
+    if i == 1:
+        continue
+
+    print('continue 1')
+
+eng = ['a','a','b','b','c','d','e','e','e']
+
+print(len(eng))
+
+dic = {}
+
+for f in eng : 
+    if f in dic:
+        dic[f] += 1
+    else:
+        dic[f]=1
+
+print(dic)
+
+
+try:
+    print(100/0)    #예외로 인해 에러가 날 수도 있는 코드를 try안에 작성, 에러가 나도 멈추지않고 다음 코드 실행
+except:
+    print('100은 0으로 나눌 수 없습니다.') #예외가 발생한 경우 처리
+finally:
+    print('다음 작업 실행') #에러 발생 여부와 상관없이 무조건 실행되는 구문이 필요할 때
+
+
+a = [100,200,300,400,500,10,800,100000]
+print(max(a))
+print(min(a))
+print(sum(a))
+
+for idx, eng in enumerate(a):
+    print(idx, eng)
+
+
+su = lambda a,b : a+b
+print(su(2,3))
+
+def chat():
+    print("function")
+
+chat()
+
+def multiply(num):
+    for i in range(1,10):
+        print(num, 'x', i, '=', num*i)
+
+multiply(2)
+multiply(9)
+
+def chat_demo(name1, name2):
+    print("%s: how are you?" %name1)
+    print("%s: i'm fine" %name2)
+chat_demo('a','b')
+
+def dsum(a,b):
+    result = a + b
+    return result #없으면 none
+d = dsum(1,3)
+print(d)
+
+class Person:
+    name ="abc"
+    
+    def say_hi(self):
+        print("안녕 나는"+self.name)
+
+p = Person()
+p.say_hi()
+
+
+class Car:
+    color = ""
+    speed = 0
+
+    #생성자
+    def __init__(self, color, speed):
+        self.color = color
+        self.speed = speed
+
+    def upSpeed(self, value):
+        self.speed = self.speed + value
+    
+    def downSpeed(self, value):
+        self.speed -= value
+    
+    def getColor(self):
+        return self.color
+    
+    def getSpeed(self):
+        return self.speed
+
+myCar1 = Car("red",30)
+myCar1.upSpeed(10)
+myCar2 = Car("blue",100)
+
+print("%s %d" %(myCar1.color, myCar1.speed))
+print("%s %d" %(myCar2.getColor(),myCar2.getSpeed()))
+
+class Car:
+    color = ""
+    speed = 0
+    count = 0
+
+    def __init__(self):
+        self.speed = 0 #인스턴스 변수
+        Car.count += 1 #클래스 변수 
+
+class Person2:
+    def __init__(self, user, age):
+        self.user = user
+        self.age = age
+    
+    def say_hello(self, to_name):
+        print("안녕"+to_name+"나는"+self.user)
+
+    def introduc(self,to_name):
+        print("안녕"+to_name+"나는"+self.user+str(self.age))
+
+hb = Person2("hb",20)
+hb.say_hello("sh")
+hb.introduc("ja")
