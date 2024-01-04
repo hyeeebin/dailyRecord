@@ -1,1 +1,94 @@
+실습 참조 : https://elpanew.tistory.com/entry/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B8%B0%EC%B4%88-%EB%AC%B8%EB%B2%95
+
+#출력
+print("hello");
+
+# 대입
+x = 3
+y = 'a'
+z = True
+
+print(x)
+print(y)
+
+#연산가능
+print(5+9)
+
+#변수의 타입 확인
+print(type(x)) #int
+print(type(y)) #str
+print(type(z)) #bool
+
+#입력값 받기
+# name = input('name:')
+# print(name)
+
+#리스트
+a_list = []
+text_list = ['a','b','c','d','e']
+int_list = [1,2,3,4,5]
+
+print(a_list)
+print(text_list)
+print(int_list)
+
+
+print(type(text_list))
+
+#리스트 요소 추가 append 
+text = '홍길동'
+a = 'a'
+a_list.append(text)
+a_list.append(a)
+
+print(a_list)
+
+#인덱스로 요소 출력하기
+print(text_list[0]) #맨앞
+print(text_list[-1]) #맨뒤
+print(text_list[0:2]) #범위설정
+print(text_list[1:]) #지정한 인덱스부터 마지막 인덱스까지 
+
+#리스트의 길이
+print(len(text_list))
+
+#인덱스 출력
+print(text_list.index('e')) #4
+
+#요소 변경하기
+text_list[2]='hi'
+print(text_list) #text_list = ['a','b','hi','d','e']
+
+#정렬
+sort_list = [5,6,1,9,2,0]
+result = sorted(sort_list)
+print(result)
+
+#이차원 배열
+text_list = ['a','b','c','d','e']
+int_list = [1,2,3,4,5]
+
+data_list = [text_list,int_list]
+print(data_list)
+
+print(data_list[0][2])
+
+#딕셔너리
+dic = {'사과':1,'바나나':2,'포도':3}
+dic['귤']=5 #딕셔너리 key value 추가
+print(dic) #dic = {'사과':1,'바나나':2,'포도':3,'귤':5}
+
+
+#빈 딕셔너리에 키와 값 추가하기
+dic = {}
+# print(dic)
+dic['홍길동']='123-123'
+dic['홍길일']='123-124'
+dic['홍길이']='123-125'
+dic['홍길삼']='123-126'
+print(dic)
+
+print(dic.keys()) #키만 출력
+print(dic.values()) #값만 출력
+
 
