@@ -27,6 +27,26 @@ XSSFWorkbook workbook = new XSSFWorkbook(opc)
 ExcelRequestManager class의 parseExcelSrpingMultipart()
 
 
+MultilfpartFile에 업로드 된 엑셀 파일을 읽어 json 형태로 반환
+
+	@PostMapping(value = "/uploadExcel")
+	@ResponseBody
+	public String uploadExcel(MultipartHttpServletRequest request){
+		MultipartFile file = null;
+		Iterator<String> iterator = request.getFileNames();
+		if(iterator.hasNext()) {
+			file = request.getFile(iterator.next());
+		}
+
+		// 엑셀 헤더 정보 구성
+		String[] headerInfo = {"number", "text", "date"};
+
+		// 엑셀 파일을 읽어 데이터 가져오기
+		List<HashMap<String, Object>> list = excelUtil.uploadExcel(file, headerInfo);
+
+		return list;
+	}
+https://blog.naver.com/hj_kim97/222374962489
 
 2. excel 다운로드
 db에서 데이터 읽어와서 엑셀파일로 만들기
