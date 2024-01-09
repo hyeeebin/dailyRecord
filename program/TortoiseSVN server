@@ -1,1 +1,12 @@
+SVN(SubVersion)?
+:형상관리 혹은 소스관리 도구. 보통 프로젝트 버전 관리를 할 때 사용하고, git/github와 유사한 도구
+
+설치
+: https://tortoisesvn.net/downloads.html 에서 다운로드 진행
+
+설치확인
+: 바탕화면이나 원하는 드라이브에 마우스 우클릭을 하면 TortoiseSVN이라는 메뉴가 보인다
+Repo-browser 클릭 후 서버 url, 아이디 패스워드 입력 후 ok 하면 폴더 생성
+원하는 위치에 svn checkout하면 폴더 생성됌
+변화가 없을 경우 pc 재부팅
 
