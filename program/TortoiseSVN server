@@ -10,3 +10,6 @@ Repo-browser 클릭 후 서버 url, 아이디 패스워드 입력 후 ok 하면 
 원하는 위치에 svn checkout하면 폴더 생성됌
 변화가 없을 경우 pc 재부팅
 
+
+svn에 새로운 폴더 or 패키지 생성 시 commit 방법
+우클릭> Tortoisesvn > add > 후 commit
