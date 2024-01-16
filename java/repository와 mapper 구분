@@ -1,16 +1,67 @@
 우선 repository는 mapper 개념을 포함한다. 
 
 mapper
-@mapper
 sql문을 정의, 그 결과를 정의해놓은 모델에 매핑시키는 ibatis(mybatis) 방식
 sql문(xml)은 메소드(java)로 매핑시켜주는 것
 정의해놓은 sql와 개발할 때 사용하는 메소드를 연결하고 결과값을 정의해놓은 타입으로 매핑시켜주는 것(DB 연결에 초점)
 
+@Mapper 어노테이션은?
+//javadoc
+//Marker interface for MyBatis mappers
+마커 인터페이스
+즉 기능이 있는게 아니라 마커, 즉 무언가를 표시하기위한 인터페이스를 의미
+단순히 이것은 매퍼입니다! 를 표시하는 어노테이션이라는 것
+
+
+
 repository
-@repository
 DAO(Data Access Object)와 유사한 개념?
 (DB에 접근해서 데이터를 조회 및 조작하는 객체)
 비즈니스 로직에서 db의 데이터를 조회 및 조작하는 것을 분리하기위한 것
+
+@Repository
+
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Component
+public @interface Repository {
+
+	/**
+	 * The value may indicate a suggestion for a logical component name,
+	 * to be turned into a Spring bean in case of an autodetected component.
+	 * @return the suggested component name, if any (or empty String otherwise)
+	 */
+	@AliasFor(annotation = Component.class)
+	String value() default "";
+
+@Repository에는 @componene가 붙어있다
+즉 해당 객체는 자동으로 빈등록이 되고 DI에 쓰일 수 있다는 것
+그리고 value라는 값을 하나 받는데 value에 대한 설명은 아래와 같다. 
+/**
+* The value may indicate a suggestion for a logical component name,
+* to be turned into a Spring bean in case of an autodetected component.
+* @return the suggested component name, if any (or empty String otherwise)
+*/
+component name, 즉 해당 객체가 빈으로 등록되었을 때의 이름을 의미한다는 것.
+이 값은 mapper.xml의 namespace를 repository랑 매칭시킬 때 유용하다. 
+
+@Repository("abc")
+public void TestRepository {
+	...
+}
+<mapper namespace="abc">
+	...
+</mapper>
+
+Mapper와 Repository 차이 정리
+유동적으로 선택해서 사용하면 된다 !
+controller > service > repository > mapper.xml
+controller > service > repository > mapper > mapper.xml
+controller > service > mapper > mapper.xml 
+
+하지만 둘의 구분과 차이는 알아둘 것. 
+
 
 jsp
 controller @controller
