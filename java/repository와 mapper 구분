@@ -12,3 +12,10 @@ DAO(Data Access Object)와 유사한 개념?
 (DB에 접근해서 데이터를 조회 및 조작하는 객체)
 비즈니스 로직에서 db의 데이터를 조회 및 조작하는 것을 분리하기위한 것
 
+jsp
+controller @controller
+service (interface)
+service impl (class) @service
+dao (class) @repository
+mappers (interface) @mapper
+xml
