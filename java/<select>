@@ -1,0 +1,19 @@
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<select id="use_yn" name="use_yn">
+			<option value="Y">Y</option>
+			<option value="N">N</option>
+</select>
+
+<script>
+		$("#use_yn").val("${grantInsaVO.use_yn}");
+</script>
+
+controller -------------------------------------------------------------------------
+		GrantInsaVO grantInsaVO = grantInsaService.selectGrantPopup(userid);
+				
+		request.setAttribute("grantInsaVO", grantInsaVO);
+		
+		System.out.println("클릭한 행의 사용여부: "+grantInsaVO.getUse_yn());
+
+
