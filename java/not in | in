@@ -1,0 +1,24 @@
+#사용자가 가지고 있는 권한을 제외하고 조회하는 쿼리문 
+not in 사용
+
+before
+select cc.s_name
+from comm_cd as cc
+where cc.s_name not in( select l.userid, cc.s_name 
+						from login_info as l, comm_cd as cc 
+						where l.grant_gbn = cc.s_code 
+						and l.userid="leehb99" 
+						);
+--> error code: 1241, Operand should contain 1 column(s)
+--> not in/in 안에 오는 select문(서브쿼리)은 단일 컬럼을 리턴해야 한다. 
+
+after
+select cc.s_name
+from comm_cd as cc
+where cc.s_name not in( select cc.s_name 
+						from login_info as l, comm_cd as cc 
+						where l.grant_gbn = cc.s_code 
+						and l.userid="leehb99" 
+						);
+
+--> 원하는 결과 도출 
