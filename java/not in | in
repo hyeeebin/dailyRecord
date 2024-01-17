@@ -22,3 +22,4 @@ where cc.s_name not in( select cc.s_name
 						);
 
 --> 원하는 결과 도출 
+
