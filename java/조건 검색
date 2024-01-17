@@ -1,0 +1,14 @@
+조건 검색시 and 조건으로 하되
+만약 필수 입력 조건이 있다면
+where userid= #{userid}
+<if test='userid != null and userid != ""'>
+	and a.userid = #{userid}
+</if>
+
+필수 입력 조건이 없다면
+ where 1=1
+<if test='userid != null and userid != ""'>
+	and a.userid = #{userid}
+</if>
+
+필수. 
