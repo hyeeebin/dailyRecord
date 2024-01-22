@@ -24,4 +24,6 @@ select l.0,
 
 
 [after]
-아 몰라 .. ㅅ
+public List<00> 00(String ㅁㅁ) throws Exception; 리스트 타입으로 변경
+xml 에서 resultType = "java.util.Map"으로 받기 
+jsp에서 <c;foreach> 반복문 돌려서 뿌려주면 됌. 
