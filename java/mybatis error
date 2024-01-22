@@ -1,0 +1,27 @@
+nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: 2
+
+
+[before]
+mapper
+public 00VO selectaa(String aa) throws Exception; 
+
+
+sql  --> 기대되는 리턴값은 2개 이상/ 하나의 컬럼에 가,나 로 들어간 컬럼을 조회할때 행이 가와 나로 나눠서 조회되는 결과를 원함. 
+select l.0, 
+			l.0, 
+			im.0, 
+			im.0, 
+			GROUP_CONCAT(cc.0 SEPARATOR ',') as 0,
+			l.0, 
+			l.0
+		from 0 as l, 0 as im, 0 as cc
+		where l.0= im.0
+		and l.0 regexp cc.0
+		and cc.0 = '00'
+		and l.0=#{0}
+		group by cc.0
+
+
+
+[after]
+아 몰라 .. ㅅ
